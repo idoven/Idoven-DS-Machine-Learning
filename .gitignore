@@ -1,0 +1,13 @@
+# Byte-compiled / optimized / DLL files
+
+**pycache**/
+_.py[cod]
+_.pyo
+_.pyd
+_.pyo
+
+# Data folder
+
+/data/
+
+/data

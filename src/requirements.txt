@@ -1,0 +1,12 @@
+pandas
+numpy
+wfdb
+tqdm
+torch
+pytorch-lightning
+scikit-learn
+seaborn
+matplotlib
+wandb
+neurokit2
+ecg_plot
