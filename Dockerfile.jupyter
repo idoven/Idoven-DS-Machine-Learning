@@ -1,0 +1,16 @@
+# syntax=docker/dockerfile:1
+FROM python:3.12
+WORKDIR /home/notebooks
+COPY requirements.txt requirements.txt
+RUN apt-get update
+RUN apt-get install -y libgdal-dev
+
+RUN pip install --upgrade pip \ 
+    && pip install -r requirements.txt
+
+EXPOSE 8888
+COPY  images images
+COPY *ipynb .
+COPY data data
+ENV PYTHONPATH .
+CMD jupyter notebook --NotebookApp.token='' --port=8888 --no-browser --ip=0.0.0.0 --allow-root

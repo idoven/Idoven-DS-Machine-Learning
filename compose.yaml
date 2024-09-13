@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    profiles: [execute]
+  jupyter:
+    build: 
+      context: .
+      dockerfile: Dockerfile.jupyter
+    ports:
+      - 8888:8888
+    container_name: ecg_notebook
+    profiles: [ecg_notebook]
