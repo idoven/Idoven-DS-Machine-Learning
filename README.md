@@ -1,43 +1,53 @@
-# Machine Learning Task
-This page has details of the task we'd like you to complete for **Idoven** ML engineer job offering.
+# ECG Classification Project - Idoven
 
-The electrocardiogram (ECG) is a non-invasive representation of the electrical activity of the heart from electrodes placed on the surface of the torso. The standard 12-lead ECG has been widely used to diagnose a variety of cardiac abnormalities such as cardiac arrhythmias, and predicts cardiovascular morbidity and mortality. The early and correct diagnosis of cardiac abnormalities can increase the chances of successful treatments. However, manual interpretation of the electrocardiogram is time-consuming, and requires skilled personnel with a high degree of training.
+This project uses ECG signals to train classification models and predict cardiac diseases. The main objective is to explore several tecniques to process, clean, and classify ECGs using Machine Learning techniques.
 
-Automatic detection and classification of cardiac abnormalities can assist physicians in the diagnosis of the growing number of ECGs recorded. Over the last decade, there have been increasing numbers of attempts to stimulate 12-lead ECG classification. Many of these algorithms seem to have the potential for accurate identification of cardiac abnormalities. However, most of these methods have only been tested or developed in single, small, or relatively homogeneous datasets. 
+## Project Structure
 
+The project is organised into the following folders:
 
-## What to do
-We've tried to keep this task as similar to working here as possible. With the data provided we would like to ask you to implement a ML classification model and provide the code necessary to train it from scratch. We are not asking for a model with any specific capabilities or performance, it is up to you to explore the problem and assess what could be reasonable and interesting within the given time constraints, taking design decisions accordingly.
-We'd like you to analyse the problem and give us some insights. The insights should be useful and actionable in some way.
+- **models/**: Contains the trained models used in the project.
+- **extra_data/**: Stores additional data, such as filtered ECGs and extracted features from the signals (e.g., `filtered_ecgs`, `extra_features`).
 
-We ask data scientist do want to join **Idoven** to work with anonymised patient data, and on the basis of this data be able to:
-- Read the _ECG_ files and corresponding annotations
-- Show how they will work on the signal and plot the signal in appropriate manner to be read by a doctor
+In addition to the already present **data/** folder
 
-As a result we expect a github project with and extructure that will include:
-- Reference documentation used
-- Jupyter Notebook, in an running environment, Colab, Docker.
-- An explanation of the work done and lessons learned.
+## Notebook Content
 
+The notebook performs the following main tasks:
 
-## Timeframe
-It would be great if you could have this done within a week. If that's not doable for you, let us know early.
+1. **Library Import**: Libraries such as `wfdb`, `neurokit2`, `tensorflow`, `xgboost`, and several from `sklearn` are used for signal processing and classification.
+2. **Data Loading**: The ECG data is loaded and prepared following the recommendations of PhysioNet.
+3. **ECG Processing**: Cleaning and filtering techniques are applied using `neurokit2` to obtain cleaner signals and useful features.
+4. **Feature Extraction**: Relevant features from the ECGs are extracted and added to a structured dataset.
+5. **Model Training**: Machine Learning models such as neural networks with Keras and `XGBoost` are used to train classifiers.
+6. **Evaluation**: Metrics such as AUC, accuracy, and ROC curves are used to evaluate the performance of the models.
 
-Also, we don't know how long this should take you, but we're not looking to reward the person that spends the most time on it. We believe in working smarter not harder.
+(The last three steps are iteratively done with each of the developed ideas.)
 
-## Tips
-In case it's helpful, here's some other tips for you:
+## Requirements
 
-You can ask questions. This isn't a "bonus points if they ask questions" thing, just that we'll answer what we can if you need us. Like we would when working together.
+The main dependencies to run this notebook include:
 
-We like to have a real work example work flow, we wencorage you to do a pull request and send the pull request for evaluation. 
+- Python 3.7+
+- TensorFlow
+- Keras
+- XGBoost
+- NeuroKit2
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- WFDB
 
-You can request more information/data, but we'd rather you didn't. If you really need more, let us know, but there'd need to be a compelling reason for it.
+These dependencies can be installed by running:
 
-## Summary
-We want to see what it's like to work with you, and the quality of work you'd produce. This is a chance for both sides to see how that is.
+```bash
+pip install -r requirements.txt
+```
 
-We will be making a decision based on these tests, so do give it your best.
+## Data
 
-Thanks for giving this a go, we can't wait to see what you come up with.
+Additional data, such as filtered ECGs and features, can be found in the `extra_data/` folder, although they can also be obtained and computed during the code execution. This includes the files `filtered_ecgs` and `extra_features`, which require some time to be executed and can be loaded more quickly from this folder.
 
+## Models
+
+The trained models are stored in the models/ folder. These models can be loaded and used directly for making predictions without the need to retrain them.

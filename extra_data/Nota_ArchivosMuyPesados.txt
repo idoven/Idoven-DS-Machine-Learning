@@ -1,0 +1,2 @@
+Nota:
+Los archivos conteniendo las median beats y los ECGs filtrados son demasiados grandes para ser incluido en GitHub, pero no es problema ya que solo tardan unos minutos en computarse. Las extra_features, que son las que más tardan en ejecutarse sí que caben en el repositiorio y las incluyo en esta carpeta.
